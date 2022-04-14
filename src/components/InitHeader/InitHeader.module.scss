@@ -1,0 +1,55 @@
+.header {
+  height: 70px;
+  background-color: #333333;
+}
+
+.container {
+  height: inherit;
+  width: 100vw;
+  display: inline-flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 52px 0 52px;
+}
+
+.buttons {
+  display: inline-flex;
+  gap: 20px;
+
+  & > a {
+    text-decoration: none;
+    font-family: 'Gotham Pro Medium';
+    font-size: 14px;
+  }
+}
+
+.signIn {
+  color: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  padding: 11px 38px;
+  border-radius: 6px;
+  transition-property: color, background-color;
+  transition-duration: 0.2s;
+
+  &:hover {
+    color: #333333;
+    background-color: #f2f2f2;
+  }
+}
+
+.signUp {
+  color: #333333;
+  background-color: #f2f2f2;
+  padding: 11px 38px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition-property: color, background-color;
+  transition-duration: 0.2s;
+
+  &:hover {
+    color: #f2f2f2;
+    background-color: #333333;
+    border: 1px solid #f2f2f2;
+  }
+}

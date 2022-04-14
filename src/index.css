@@ -18,3 +18,12 @@ html {
 *:after {
   box-sizing: inherit;
 }
+
+@font-face {
+  font-family: 'Gotham Pro Regular';
+  src: url('./assets/fonts/gothampro/gothampro.ttf');
+}
+@font-face {
+  font-family: 'Gotham Pro Medium';
+  src: url('./assets/fonts/gothampro/gothampro_medium.ttf');
+}
