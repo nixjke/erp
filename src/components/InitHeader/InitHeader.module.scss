@@ -1,4 +1,5 @@
 .header {
+  position: fixed;
   height: 70px;
   background-color: #333333;
 }
@@ -21,6 +22,7 @@
     text-decoration: none;
     font-family: 'Gotham Pro Medium';
     font-size: 14px;
+    white-space: nowrap;
   }
 }
 

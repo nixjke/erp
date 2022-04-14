@@ -1,12 +1,18 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import InitHeader from './components/InitHeader/InitHeader'
+import AuthPlatform from './components/AuthPlatform/AuthPlatform'
+import BlankTemplate from './components/BlankTemplate/BlankTemplate'
+import SelectPlatform from './pages/SelectPlatform/SelectPlatform'
 
 function App() {
   return (
-    <div className="App">
-      <InitHeader />
-    </div>
+    <Routes>
+      <Route path="/" element={<SelectPlatform />}>
+        <Route index element={<BlankTemplate />} />
+        <Route path="auth-platform" element={<AuthPlatform />} />
+      </Route>
+    </Routes>
   )
 }
 
