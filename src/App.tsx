@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import AuthPlatform from './components/AuthPlatform/AuthPlatform'
 import BlankTemplate from './components/BlankTemplate/BlankTemplate'
+import CrmCompanyAuth from './pages/CrmCompanyAuth/CrmCompanyAuth'
 import SelectPlatform from './pages/SelectPlatform/SelectPlatform'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Route index element={<BlankTemplate />} />
         <Route path="auth-platform" element={<AuthPlatform />} />
       </Route>
+      <Route path="/company-name/signin" element={<CrmCompanyAuth />}></Route>
     </Routes>
   )
 }

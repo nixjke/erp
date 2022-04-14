@@ -1,8 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import styles from './AuthPlatform.module.scss'
 
 export default function AuthPlatform() {
+  const navigate = useNavigate()
+
   return (
     <div className={styles.authPlatform}>
       <div className={styles.form}>
@@ -15,7 +17,15 @@ export default function AuthPlatform() {
             <input type="text" placeholder="Название платформы" />
             <input type="text" value=".mysmartoffice.pro" readOnly />
           </div>
-          <button className={styles.button}>Войти</button>
+          <button
+            onClick={e => {
+              e.preventDefault()
+              navigate('/company-name/signin')
+            }}
+            className={styles.button}
+          >
+            Войти
+          </button>
         </form>
       </div>
     </div>
