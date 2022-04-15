@@ -1,6 +1,9 @@
 import { Action, combineReducers, configureStore, ThunkAction } from '@reduxjs/toolkit'
+import signinSlice from './slices/signinSlice'
 
-const rootReducer = combineReducers({})
+const rootReducer = combineReducers({
+  signin: signinSlice,
+})
 
 export const store = configureStore({
   reducer: rootReducer,
