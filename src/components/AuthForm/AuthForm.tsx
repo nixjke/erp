@@ -2,35 +2,37 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useAppSelector } from '../../store/redux-hooks'
 import { fetchContainer } from '../../store/slices/siginSlice/signinSlice'
-import styles from './AuthForm.module.scss'
+import s from './AuthForm.module.scss'
 
 export default function AuthForm() {
   const dispath = useDispatch()
-  const signin = useAppSelector(store => store.signin)
+  const signin = useAppSelector(store => store.signin.item)
+
+  console.log()
 
   React.useEffect(() => {
     dispath(fetchContainer())
   }, [])
 
   return (
-    <div className={styles.authForm}>
-      {/* <form className={styles.form}>
-        <h1>{blockTitle}</h1>
-        <div className={styles.inputs}>
-          <input className={styles.email} type="text" placeholder={emailField.title} />
-          <input className={styles.password} type="text" placeholder={passwordField.title} />
+    <div className={s.authForm}>
+      <form className={s.form}>
+        <h1>{signin.data.blocks[0].BlockTitle}</h1>
+        <div className={s.inputs}>
+          <input className={s.email} type="text" placeholder="Email" />
+          <input className={s.password} type="text" placeholder="Пароль" />
         </div>
-        <a href="">{`${forgetPassword.Title}?`}</a>
-        <label className={styles.label}>
-          <input type={rememberMeField.type} />
-          <span>{rememberMeField.title}</span>
+        <a href="">{signin.data.Links[0].Title}</a>
+        <label className={s.label}>
+          <input type="checkbox" />
+          <span>{signin.data.blocks[0].Fields[2].title}</span>
         </label>
-        <button className={styles.button}>{signInButton.title}</button>
-        <div className={styles.register}>
-          <p>{haveAccountText.title}</p>
-          <a href="">{register.Title}</a>
+        <button className={s.button}>{signin.data.Buttons[0].title}</button>
+        <div className={s.register}>
+          <p>{signin.data.blocks[0].Texts[0].title}</p>
+          <a href="">{signin.data.Links[1].Title}</a>
         </div>
-      </form> */}
+      </form>
     </div>
   )
 }
