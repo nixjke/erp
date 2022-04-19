@@ -8,8 +8,6 @@ export default function AuthForm() {
   const dispath = useDispatch()
   const signin = useAppSelector(store => store.signin.item)
 
-  console.log()
-
   React.useEffect(() => {
     dispath(fetchContainer())
   }, [])
