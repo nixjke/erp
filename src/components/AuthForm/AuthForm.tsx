@@ -8,6 +8,10 @@ export default function AuthForm() {
   const dispath = useDispatch()
   const signin = useAppSelector(store => store.signin.item)
 
+  const items = [1, 2, 3, 4]
+  const items1 = [1, 2, 3, 4]
+  const items2 = [1, 2, 3, 4]
+
   React.useEffect(() => {
     dispath(fetchContainer())
   }, [])
@@ -31,6 +35,11 @@ export default function AuthForm() {
           <a href="">{signin.data.Links[1].Title}</a>
         </div>
       </form>
+      {
+        items.map(item => {
+          <p>{items}</p>
+        })
+      }
     </div>
   )
 }

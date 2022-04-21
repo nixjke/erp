@@ -5,17 +5,12 @@ import AuthForm from './components/AuthForm/AuthForm'
 import AuthPlatform from './components/AuthPlatform/AuthPlatform'
 import BlankTemplate from './components/BlankTemplate/BlankTemplate'
 import CrmCompanyAuth from './pages/CrmCompanyAuth/CrmCompanyAuth'
-import SelectPlatform from './pages/SelectPlatform/SelectPlatform'
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<SelectPlatform />}>
-        <Route index element={<BlankTemplate />} />
-        <Route path="auth-platform" element={<AuthPlatform />} />
-      </Route>
-      <Route path="/company-name" element={<CrmCompanyAuth />}>
-        <Route path="signin" element={<AuthForm />} />
+      <Route path="/" element={<CrmCompanyAuth />}>
+        <Route index element={<AuthForm />} />
       </Route>
     </Routes>
   )
