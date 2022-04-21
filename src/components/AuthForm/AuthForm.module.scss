@@ -94,12 +94,25 @@
 
   border-radius: 6px;
   border: none;
-  background: #4f4f4f;
-
+  background: #4574f6;
+  border: solid 4px #4574f6;
   margin: 0 64px;
   margin-top: 24px;
-  padding: 14px 16px;
+  padding: 12px 14px;
   width: 343px;
+
+  transition: all 200ms;
+
+  &:hover {
+    background: #1c54e5;
+    border: solid 4px #1c54e5;
+  }
+
+  &:focus {
+    border: solid 4px #1c54e5;
+    background: #4574f6;
+  }
+
 }
 
 .register {

@@ -35,11 +35,9 @@ export default function AuthForm() {
           <a href="">{signin.data.Links[1].Title}</a>
         </div>
       </form>
-      {
-        items.map(item => {
-          <p>{items}</p>
-        })
-      }
+      {items.map(item => {
+        ;<p>{items}</p>
+      })}
     </div>
   )
 }
