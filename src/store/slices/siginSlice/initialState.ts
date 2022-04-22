@@ -22,7 +22,7 @@ interface IText {
 interface ILinks {
   id: number
   icon: string
-  Title: string
+  title: string
   type: string
   routeUrl: string
   routeAction: string
@@ -151,7 +151,7 @@ export const initialState: InitialState = {
               type: 'Text',
               title: 'Все права защищены',
               hint: '',
-              sortOrder: 5,
+              sortOrder: 10,
             },
           ],
         },
@@ -160,16 +160,17 @@ export const initialState: InitialState = {
         {
           id: 1,
           icon: '',
-          Title: 'Забыли пароль',
+          title: 'Забыли пароль',
           type: 'Get',
           routeUrl: '/api/v2/auth/forgotPassword',
           routeAction: '',
           sortOrder: 3,
         },
+   
         {
           id: 3,
           icon: '',
-          Title: 'Зарегистрируйтесь бесплатно',
+          title: 'Зарегистрируйтесь бесплатно',
           type: 'Get',
           routeUrl: '/api/v2/auth/RegisterFree',
           routeAction: '',
