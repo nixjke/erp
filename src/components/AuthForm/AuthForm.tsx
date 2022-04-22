@@ -8,9 +8,15 @@ export default function AuthForm() {
   const dispath = useDispatch()
   const signin = useAppSelector(store => store.signin.item)
 
-  const items = [1, 2, 3, 4]
-  const items1 = [1, 2, 3, 4]
-  const items2 = [1, 2, 3, 4]
+  const signinButtons = signin.data.Buttons
+  const signinLinks = signin.data.Links
+  const signinFields = signin.data.blocks[0].Fields
+  const signinTexts = signin.data.blocks[0].Texts
+
+  const allBlocks = [...signinButtons, ...signinLinks, ...signinFields, ...signinTexts]
+  allBlocks.sort((a, b) => {
+    return a.sortOrder - b.sortOrder
+  })
 
   React.useEffect(() => {
     dispath(fetchContainer())
@@ -35,9 +41,6 @@ export default function AuthForm() {
           <a href="">{signin.data.Links[1].Title}</a>
         </div>
       </form>
-      {items.map(item => {
-        ;<p>{items}</p>
-      })}
     </div>
   )
 }

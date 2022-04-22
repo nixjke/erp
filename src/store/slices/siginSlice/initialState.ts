@@ -23,9 +23,10 @@ interface ILinks {
   id: number
   icon: string
   Title: string
-  Type: string
+  type: string
   routeUrl: string
   routeAction: string
+  sortOrder: number
 }
 
 type Item = {
@@ -64,6 +65,7 @@ type Item = {
         type: string
         routeUrl: string
         routeAction: string
+        sortOrder: number
       }
     ]
   }
@@ -131,7 +133,7 @@ export const initialState: InitialState = {
               isRequired: true,
               defaultValue: '',
               canEdit: true,
-              sortOrder: 3,
+              sortOrder: 4,
               value: '',
               rel: null,
             },
@@ -142,14 +144,14 @@ export const initialState: InitialState = {
               type: 'Text',
               title: 'Еще нет аккаунта?',
               hint: '',
-              sortOrder: 3,
+              sortOrder: 6,
             },
             {
               id: 2,
               type: 'Text',
               title: 'Все права защищены',
               hint: '',
-              sortOrder: 4,
+              sortOrder: 5,
             },
           ],
         },
@@ -159,25 +161,19 @@ export const initialState: InitialState = {
           id: 1,
           icon: '',
           Title: 'Забыли пароль',
-          Type: 'Get',
+          type: 'Get',
           routeUrl: '/api/v2/auth/forgotPassword',
           routeAction: '',
+          sortOrder: 3,
         },
         {
           id: 3,
           icon: '',
           Title: 'Зарегистрируйтесь бесплатно',
-          Type: 'Get',
+          type: 'Get',
           routeUrl: '/api/v2/auth/RegisterFree',
           routeAction: '',
-        },
-        {
-          id: 4,
-          icon: '',
-          Title: 'Разработчик',
-          Type: '',
-          routeUrl: 'http://www.wconsults.ru',
-          routeAction: '',
+          sortOrder: 7,
         },
       ],
       Buttons: [
@@ -188,6 +184,7 @@ export const initialState: InitialState = {
           type: 'Post',
           routeUrl: '/api/v2/auth/login',
           routeAction: '',
+          sortOrder: 5,
         },
       ],
     },
