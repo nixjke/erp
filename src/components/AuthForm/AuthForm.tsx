@@ -8,6 +8,10 @@ export default function AuthForm() {
   const dispath = useDispatch()
   const signin = useAppSelector(store => store.signin.item)
 
+  React.useEffect(() => {
+    dispath(fetchContainer())
+  }, [])
+
   const signinButtons = signin.data.Buttons
   const signinLinks = signin.data.Links
   const signinFields = signin.data.blocks[0].Fields
@@ -18,17 +22,44 @@ export default function AuthForm() {
     return a.sortOrder - b.sortOrder
   })
 
-  React.useEffect(() => {
-    dispath(fetchContainer())
-  }, [])
+  const [emal, setEmail] = React.useState('')
+  const [password, setPassword] = React.useState('')
+  const [emailDirty, setEmailDirty] = React.useState(false)
+  const [passwordlDirty, setPasswordDirty] = React.useState(false)
+  const [emailError, setEmailError] = React.useState('Введите корректный Email')
+  const [passwordError, setPasswordError] = React.useState('Введите корректный Password')
+
+  const blurHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    switch (e.target.name) {
+      case 'Email':
+        setEmailDirty(true)
+        break
+      case 'password':
+        setPasswordDirty(true)
+        break
+    }
+  }
 
   return (
     <div className={s.authForm}>
       <form className={s.form}>
         <h1>{signin.data.blocks[0].BlockTitle}</h1>
         {allBlocks.map(block => {
-          if (block.type === 'Email')
-            return <input key={block.title + block.id} className={s.email} type="text" placeholder="Email" />
+          if (block.type === 'Email') {
+            return (
+              <div>
+                <input
+                  onBlur={e => blurHandle(e)}
+                  name={block.type}
+                  key={block.title + block.id}
+                  className={s.email}
+                  type="text"
+                  placeholder="Email"
+                />{' '}
+                {(emailDirty && emailError) && <div className={s.error}>{emailError}</div>}
+              </div>
+            )
+          }
           if (block.type === 'password')
             return <input key={block.title + block.id} className={s.password} type="text" placeholder="Пароль" />
           if (block.title === 'Забыли пароль')
@@ -41,7 +72,7 @@ export default function AuthForm() {
             return (
               <label key={block.title + block.id} className={s.label}>
                 <input type="checkbox" />
-                <span>{signin.data.blocks[0].Fields[2].title}</span>
+                <span>{block.title}</span>
               </label>
             )
           if (block.title === 'Войти')

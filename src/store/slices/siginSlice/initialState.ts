@@ -166,7 +166,7 @@ export const initialState: InitialState = {
           routeAction: '',
           sortOrder: 3,
         },
-   
+
         {
           id: 3,
           icon: '',
