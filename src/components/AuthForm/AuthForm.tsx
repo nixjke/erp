@@ -44,7 +44,9 @@ export default function AuthForm() {
 
   return (
     <div className={s.authForm}>
-      <ShadowBox></ShadowBox>
+      <ShadowBox>
+        <h1 className={s.title}>Войти в аккаунт</h1>
+      </ShadowBox>
     </div>
   )
 }
