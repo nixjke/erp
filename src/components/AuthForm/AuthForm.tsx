@@ -48,7 +48,7 @@ export default function AuthForm() {
       <ShadowBox>
         <div className={s.title}>Войти в аккаунт</div>
         <Button>Войти</Button>
-        <Input placeholder="test" />
+        <Input  error={+false} errortext="Введите корректный Email" placeholder="Text" />
       </ShadowBox>
     </div>
   )
