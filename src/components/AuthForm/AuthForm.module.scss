@@ -1,13 +1,15 @@
 .authForm {
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: max(471px);
+  padding-top: 318px;
+  margin: 0 auto;
 }
 
 .title {
-  font-family: 'Gotham Pro Regular';
+  font-family: 'Gotham Pro Medium';
   font-size: 36px;
   line-height: 42px;
   color: #000000;
+  text-align: center;
+  margin-bottom: 40px;
 }

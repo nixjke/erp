@@ -2,8 +2,9 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useAppSelector } from '../../store/redux-hooks'
 import { fetchContainer } from '../../store/slices/siginSlice/signinSlice'
+import Button from '../Button/Button'
+import Input from '../Input/Input'
 import ShadowBox from '../ShadowBox/ShadowBox'
-import Text from '../Text/Text'
 import s from './AuthForm.module.scss'
 
 export default function AuthForm() {
@@ -45,7 +46,9 @@ export default function AuthForm() {
   return (
     <div className={s.authForm}>
       <ShadowBox>
-        <h1 className={s.title}>Войти в аккаунт</h1>
+        <div className={s.title}>Войти в аккаунт</div>
+        <Button>Войти</Button>
+        <Input placeholder="test" />
       </ShadowBox>
     </div>
   )

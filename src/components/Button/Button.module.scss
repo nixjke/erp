@@ -1,1 +1,29 @@
+.button {
+  width: 100%;
+  padding: 10px 32px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  border: 4px solid #4574f6;
+  background: #4574f6;
+  transition: all 150ms;
 
+  &:hover {
+    background: #1c54e5;
+    border: 4px solid #1c54e5;
+  }
+
+  &:focus {
+    background: #4574f6;
+    border: 4px solid #1c54e5;
+  }
+
+  &:active {
+    border: 4px solid #1148d6;
+    background: #1148d6;
+  }
+}
