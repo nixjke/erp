@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useAppSelector } from '../../store/redux-hooks'
 import { fetchContainer } from '../../store/slices/siginSlice/signinSlice'
+import Body1 from '../Body1/Body1'
 import Button from '../Button/Button'
 import Input from '../Input/Input'
 import ShadowBox from '../ShadowBox/ShadowBox'
@@ -48,7 +49,10 @@ export default function AuthForm() {
       <ShadowBox>
         <div className={s.title}>Войти в аккаунт</div>
         <Button>Войти</Button>
-        <Input  error={+false} errortext="Введите корректный Email" placeholder="Text" />
+        <Input error={+false} errortext="Введите корректный Email" placeholder="Text" />
+        <div className={s.text}>
+          <Body1>Еще нет аккаунта?</Body1>
+        </div>
       </ShadowBox>
     </div>
   )
