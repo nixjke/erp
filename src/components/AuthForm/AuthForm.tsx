@@ -5,6 +5,7 @@ import { fetchContainer } from '../../store/slices/siginSlice/signinSlice'
 import Body1 from '../Body1/Body1'
 import Button from '../Button/Button'
 import Input from '../Input/Input'
+import DecorativeLink from '../DecorativeLink/DecorativeLink'
 import ShadowBox from '../ShadowBox/ShadowBox'
 import s from './AuthForm.module.scss'
 
@@ -53,6 +54,7 @@ export default function AuthForm() {
         <div className={s.text}>
           <Body1>Еще нет аккаунта?</Body1>
         </div>
+        <DecorativeLink>Test</DecorativeLink>
       </ShadowBox>
     </div>
   )
