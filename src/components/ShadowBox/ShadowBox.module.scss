@@ -2,5 +2,5 @@
   width: 100%;
   background-color: #fff;
   box-shadow: 0px 4px 20px rgba(129, 129, 129, 0.25);
-  padding: 64px 56px;
+  padding: clamp(28px, 5vw, 56px) clamp(32px, 5vw, 64px);
 }
