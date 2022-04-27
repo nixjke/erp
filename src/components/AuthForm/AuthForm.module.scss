@@ -1,6 +1,6 @@
 .authForm {
   height: 100vh;
-  width: max(471px);
+  width: calc(min(471px, 100%));
   padding-top: 318px;
   margin: 0 auto;
 }
@@ -16,4 +16,10 @@
 
 .text {
   text-align: center;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
 }

@@ -8,6 +8,7 @@ import Input from '../Input/Input'
 import DecorativeLink from '../DecorativeLink/DecorativeLink'
 import ShadowBox from '../ShadowBox/ShadowBox'
 import s from './AuthForm.module.scss'
+import Checkbox from '../Checkbox/Checkbox'
 
 export default function AuthForm() {
   const dispath = useDispatch()
@@ -55,6 +56,10 @@ export default function AuthForm() {
           <Body1>Еще нет аккаунта?</Body1>
         </div>
         <DecorativeLink>Test</DecorativeLink>
+        <label className={s.label}>
+          <Checkbox />
+          <Body1>Запомнить меня</Body1>
+        </label>
       </ShadowBox>
     </div>
   )
