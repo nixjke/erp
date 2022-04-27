@@ -27,7 +27,7 @@ export default function AuthForm() {
   allBlocks.sort((a, b) => {
     return a.sortOrder - b.sortOrder
   })
-  
+
   return (
     <div className={s.authForm}>
       <ShadowBox>

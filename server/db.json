@@ -1,0 +1,114 @@
+{
+  "signin": {
+    "user": null,
+    "module": "auth",
+    "properties": "Signin",
+    "settings": {
+      "titleLong": "CRM",
+      "titleShort": "Система управления клиентами",
+      "title": "Войти в аккаунт",
+      "timezone": "Europe/Moscow",
+      "favicon": "/upload/brand7ac55831c580eee0bc8513c34d82f068.png",
+      "logoUrl": "/upload/brand7ac55831c580eee0bc8513c34d82f067.png",
+      "lang": "ru",
+      "baseUrl": "site.ru",
+      "Body": {
+        "background": "/upload/background848f818896d42178d0e9fbcd4dfff40e.jpg",
+        "bgcolor": "#FFF"
+      }
+    },
+    "data": {
+      "blocks": [
+        {
+          "id": 1,
+          "BlockTitle": "Войти в аккаунт",
+          "Fields": [
+            {
+              "id": 1,
+              "type": "Email",
+              "title": "Email",
+              "hint": "Введите Email",
+              "isRequired": true,
+              "defaultValue": "",
+              "canEdit": true,
+              "sortOrder": 1,
+              "value": "",
+              "rel": null
+            },
+            {
+              "id": 2,
+              "type": "password",
+              "title": "Пароль",
+              "hint": "Введите Пароль",
+              "isRequired": true,
+              "defaultValue": "",
+              "canEdit": true,
+              "sortOrder": 2,
+              "value": "",
+              "rel": null
+            },
+            {
+              "id": 3,
+              "type": "checkbox",
+              "title": "Запомнить меня",
+              "hint": "",
+              "isRequired": true,
+              "defaultValue": "",
+              "canEdit": true,
+              "sortOrder": 4,
+              "value": "",
+              "rel": null
+            }
+          ],
+          "Texts": [
+            {
+              "id": 1,
+              "type": "Text",
+              "title": "Еще нет аккаунта?",
+              "hint": "",
+              "sortOrder": 6
+            },
+            {
+              "id": 2,
+              "type": "Text",
+              "title": "Все права защищены",
+              "hint": "",
+              "sortOrder": 10
+            }
+          ]
+        }
+      ],
+      "Links": [
+        {
+          "id": 1,
+          "icon": "",
+          "title": "Забыли пароль",
+          "type": "Get",
+          "routeUrl": "/api/v2/auth/forgotPassword",
+          "routeAction": "",
+          "sortOrder": 3
+        },
+        {
+          "id": 3,
+          "icon": "",
+          "title": "Зарегистрируйтесь бесплатно",
+          "type": "Get",
+          "routeUrl": "/api/v2/auth/RegisterFree",
+          "routeAction": "",
+          "sortOrder": 7
+        }
+      ],
+      "Buttons": [
+        {
+          "id": 2,
+          "icon": "",
+          "title": "Войти",
+          "type": "Post",
+          "routeUrl": "/api/v2/auth/login",
+          "routeAction": "",
+          "sortOrder": 5
+        }
+      ]
+    }
+  }
+}

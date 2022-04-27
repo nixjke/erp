@@ -5,8 +5,9 @@ import axios from 'axios'
 export const fetchContainer = createAsyncThunk('signin/fetchContainer', async () => {
   const response = await axios({
     method: 'GET',
-    // url: 'https://mso.mocklab.io/api/v2/auth/signin',
+    url: 'http://localhost:3001/signin',
   })
+  console.log(response.data)
   return response.data
 })
 
