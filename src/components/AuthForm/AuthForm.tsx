@@ -27,25 +27,7 @@ export default function AuthForm() {
   allBlocks.sort((a, b) => {
     return a.sortOrder - b.sortOrder
   })
-
-  const [emal, setEmail] = React.useState('')
-  const [password, setPassword] = React.useState('')
-  const [emailDirty, setEmailDirty] = React.useState(false)
-  const [passwordlDirty, setPasswordDirty] = React.useState(false)
-  const [emailError, setEmailError] = React.useState('Введите корректный Email')
-  const [passwordError, setPasswordError] = React.useState('Введите корректный Password')
-
-  const blurHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    switch (e.target.name) {
-      case 'Email':
-        setEmailDirty(true)
-        break
-      case 'password':
-        setPasswordDirty(true)
-        break
-    }
-  }
-
+  
   return (
     <div className={s.authForm}>
       <ShadowBox>
