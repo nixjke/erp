@@ -146,13 +146,6 @@ export const initialState: InitialState = {
               hint: '',
               sortOrder: 6,
             },
-            {
-              id: 2,
-              type: 'Text',
-              title: 'Все права защищены',
-              hint: '',
-              sortOrder: 10,
-            },
           ],
         },
       ],

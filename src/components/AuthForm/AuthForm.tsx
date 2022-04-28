@@ -28,20 +28,54 @@ export default function AuthForm() {
     return a.sortOrder - b.sortOrder
   })
 
+  const renderAuthForm = (params: any) => {
+    console.log(params)
+    switch (params.type) {
+      case 'Email':
+        return (
+          <Input
+            key={params.id + params.type}
+            error={+false}
+            errortext="Введите корректный Email"
+            placeholder={params.title}
+          />
+        )
+      case 'password':
+        return (
+          <Input
+            key={params.id + params.type}
+            error={+false}
+            errortext="Введите корректный пароль"
+            placeholder={params.title}
+          />
+        )
+      case 'checkbox':
+        return (
+          <label key={params.id + params.type} className={s.label}>
+            <Checkbox />
+            <Body1>{params.title}</Body1>
+          </label>
+        )
+      case 'Get':
+        return <DecorativeLink key={params.id + params.type}>{params.title}</DecorativeLink>
+      case 'Post':
+        return <Button key={params.id + params.type}>{params.title}</Button>
+      case 'Text':
+        return (
+          <div key={params.id + params.type} className={s.text}>
+            <Body1>{params.title}</Body1>
+          </div>
+        )
+      default:
+        return
+    }
+  }
+
   return (
     <div className={s.authForm}>
       <ShadowBox>
         <div className={s.title}>Войти в аккаунт</div>
-        <Button>Войти</Button>
-        <Input error={+false} errortext="Введите корректный Email" placeholder="Text" />
-        <div className={s.text}>
-          <Body1>Еще нет аккаунта?</Body1>
-        </div>
-        <DecorativeLink>Test</DecorativeLink>
-        <label className={s.label}>
-          <Checkbox />
-          <Body1>Запомнить меня</Body1>
-        </label>
+        {allBlocks.map(block => renderAuthForm(block))}
       </ShadowBox>
     </div>
   )
