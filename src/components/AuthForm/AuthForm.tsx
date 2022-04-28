@@ -14,6 +14,14 @@ export default function AuthForm() {
   const dispath = useDispatch()
   const signin = useAppSelector(store => store.signin.item)
 
+  const [email, setEmail] = React.useState('')
+  const [password, setPassword] = React.useState('')
+  const [emailDirty, setEmailDirty] = React.useState(false)
+  const [passwordDirty, setPasswordDirty] = React.useState(false)
+
+  console.log(emailDirty)
+  console.log(passwordDirty)
+
   React.useEffect(() => {
     dispath(fetchContainer())
   }, [])
@@ -28,25 +36,60 @@ export default function AuthForm() {
     return a.sortOrder - b.sortOrder
   })
 
+  const blurHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    switch (e.target.name) {
+      case 'Email':
+        setEmailDirty(true)
+        break
+      case 'password':
+        setPasswordDirty(true)
+        break
+    }
+  }
+
+  const emailHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value)
+
+    const re =
+      /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+
+    if (!(String(e.target.value).toLowerCase().match(re))) {
+      setEmailDirty(true)
+    } else {
+      setEmailDirty(false)
+    }
+  }
+
   const renderAuthForm = (params: any) => {
-    console.log(params)
     switch (params.type) {
       case 'Email':
         return (
           <Input
+            name={params.type}
             key={params.id + params.type}
-            error={+false}
+            error={+emailDirty}
             errortext="Введите корректный Email"
             placeholder={params.title}
+            value={email}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              emailHandler(e)
+            }}
+            onBlur={(e: React.ChangeEvent<HTMLInputElement>) => blurHandler(e)}
           />
         )
       case 'password':
         return (
           <Input
+            name={params.type}
             key={params.id + params.type}
-            error={+false}
+            error={+passwordDirty}
             errortext="Введите корректный пароль"
             placeholder={params.title}
+            value={password}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setPassword(e.target.value)
+            }}
+            onBlur={(e: React.ChangeEvent<HTMLInputElement>) => blurHandler(e)}
           />
         )
       case 'checkbox':
