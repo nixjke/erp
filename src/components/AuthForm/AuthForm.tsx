@@ -84,6 +84,7 @@ export default function AuthForm() {
             errortext="Введите корректный Email"
             placeholder={params.title}
             value={email}
+            contenInpt={email} 
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               emailHandler(e)
             }}
