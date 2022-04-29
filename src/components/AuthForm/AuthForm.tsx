@@ -19,8 +19,8 @@ export default function AuthForm() {
   const [emailDirty, setEmailDirty] = React.useState(false)
   const [passwordDirty, setPasswordDirty] = React.useState(false)
 
-  console.log(emailDirty)
-  console.log(passwordDirty)
+  // console.log(passwordDirty)
+  console.log(false || true)
 
   React.useEffect(() => {
     dispath(fetchContainer())
@@ -39,9 +39,11 @@ export default function AuthForm() {
   const blurHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     switch (e.target.name) {
       case 'Email':
+        if (e.target.value.length > 0) return
         setEmailDirty(true)
         break
       case 'password':
+        if (e.target.value.length > 0) return
         setPasswordDirty(true)
         break
     }
@@ -53,10 +55,21 @@ export default function AuthForm() {
     const re =
       /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
-    if (!(String(e.target.value).toLowerCase().match(re))) {
+    if (!String(e.target.value).toLowerCase().match(re)) {
       setEmailDirty(true)
     } else {
       setEmailDirty(false)
+    }
+  }
+
+  const passwordHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value)
+
+    if (e.target.value.length < 3) {
+      setPasswordDirty(true)
+      if (!e.target.value) setPasswordDirty(true)
+    } else {
+      setPasswordDirty(false)
     }
   }
 
@@ -87,7 +100,7 @@ export default function AuthForm() {
             placeholder={params.title}
             value={password}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              setPassword(e.target.value)
+              passwordHandler(e)
             }}
             onBlur={(e: React.ChangeEvent<HTMLInputElement>) => blurHandler(e)}
           />
