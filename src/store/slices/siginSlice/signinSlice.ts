@@ -5,7 +5,7 @@ import axios from 'axios'
 export const fetchContainer = createAsyncThunk('signin/fetchContainer', async () => {
   const response = await axios({
     method: 'GET',
-    url: 'http://localhost:3001/signin',
+    url: 'http://localhost:3001/auth',
   })
   return response.data
 })

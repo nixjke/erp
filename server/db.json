@@ -1,5 +1,5 @@
 {
-  "signin": {
+  "auth": {
     "user": null,
     "module": "auth",
     "properties": "Signin",
@@ -103,5 +103,12 @@
         }
       ]
     }
-  }
+  },
+  "users": [
+    {
+      "email": "test@mail.ru",
+      "password": "$2a$10$TsM5usYjot1pXVFrMczMTOKsSxS106DG2EpfEzJZXj4sNuVucaRtS",
+      "id": 1
+    }
+  ]
 }
