@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useAppSelector } from '../../store/redux-hooks'
-import { fetchContainer } from '../../store/slices/siginSlice/signinSlice'
+import { fetchContainer } from '../../store/slices/signinSlice'
 import Body1 from '../Body1/Body1'
 import Button from '../Button/Button'
 import Input from '../Input/Input'
