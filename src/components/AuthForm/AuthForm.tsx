@@ -84,7 +84,7 @@ export default function AuthForm() {
           email: email,
           password: password,
         },
-      })
+      });
       console.log(response)
       dispath(
         setUser({
@@ -157,12 +157,12 @@ export default function AuthForm() {
     <div className={s.authForm}>
       <ShadowBox>
         <form
-          onSubmit={(e) => {
+          onSubmit={e => {
             e.preventDefault()
             handleLogin(email, password)
           }}
         >
-          <div className={s.title}>Войти в аккаунт</div>
+          <div className={s.title}>{signin.data.blocks[0].BlockTitle}</div>
           {allBlocks.map(block => renderAuthForm(block))}
         </form>
       </ShadowBox>

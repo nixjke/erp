@@ -33,7 +33,11 @@
               "canEdit": true,
               "sortOrder": 1,
               "value": "",
-              "rel": null
+              "rel": null,
+              "style": {
+                "margin": "10px",
+                "color": "red"
+              }
             },
             {
               "id": 2,
