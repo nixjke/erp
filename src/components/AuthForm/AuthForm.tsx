@@ -9,18 +9,19 @@ import DecorativeLink from '../DecorativeLink/DecorativeLink'
 import ShadowBox from '../ShadowBox/ShadowBox'
 import s from './AuthForm.module.scss'
 import Checkbox from '../Checkbox/Checkbox'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { setUser } from '../../store/slices/userSlice'
 
 export default function AuthForm() {
   const dispath = useDispatch()
+  const navigate = useNavigate()
   const signin = useAppSelector(store => store.signin.item)
 
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [emailDirty, setEmailDirty] = React.useState(false)
   const [passwordDirty, setPasswordDirty] = React.useState(false)
-
-  // console.log(passwordDirty)
-  console.log(false || true)
 
   React.useEffect(() => {
     dispath(fetchContainer())
@@ -70,6 +71,31 @@ export default function AuthForm() {
       if (!e.target.value) setPasswordDirty(true)
     } else {
       setPasswordDirty(false)
+    }
+  }
+
+  const handleLogin = async (email: string, password: string) => {
+    console.log('asd')
+    try {
+      const response = await axios({
+        method: 'POST',
+        url: 'http://localhost:3001/signin',
+        data: {
+          email: email,
+          password: password,
+        },
+      })
+      console.log(response)
+      dispath(
+        setUser({
+          email: response.data.user.email,
+          accessToken: response.data.accessToken,
+          id: response.data.user.id,
+        })
+      )
+      navigate('/not-found')
+    } catch (error) {
+      console.log(error)
     }
   }
 
@@ -130,8 +156,15 @@ export default function AuthForm() {
   return (
     <div className={s.authForm}>
       <ShadowBox>
-        <div className={s.title}>Войти в аккаунт</div>
-        {allBlocks.map(block => renderAuthForm(block))}
+        <form
+          onSubmit={(e) => {
+            e.preventDefault()
+            handleLogin(email, password)
+          }}
+        >
+          <div className={s.title}>Войти в аккаунт</div>
+          {allBlocks.map(block => renderAuthForm(block))}
+        </form>
       </ShadowBox>
     </div>
   )
