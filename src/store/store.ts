@@ -1,8 +1,10 @@
 import { Action, combineReducers, configureStore, ThunkAction } from '@reduxjs/toolkit'
 import signinSlice from './slices/signinSlice'
+import userSlice from './slices/userSlice'
 
 const rootReducer = combineReducers({
   signin: signinSlice,
+  authorization: userSlice,
 })
 
 export const store = configureStore({
