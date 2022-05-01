@@ -17,7 +17,7 @@ export default function AuthForm() {
   const dispath = useDispatch()
   const navigate = useNavigate()
   const signin = useAppSelector(store => store.signin)
-
+  console.log(signin)
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [emailDirty, setEmailDirty] = React.useState(false)
@@ -27,12 +27,14 @@ export default function AuthForm() {
     dispath(fetchContainer())
   }, [])
 
-  const signinButtons = signin.item.data?.Buttons
-  const signinLinks = signin.item.data?.Links
-  const signinFields = signin.item.data?.blocks[0].Fields
-  const signinTexts = signin.item.data?.blocks[0].Texts
+  const allBlocks: Array<any> = [
+    // ...signin.item.data?.Buttons,
+    // ...signin.item.data?.Links,
+    // ...signin.item.data?.blocks[0].Fields,
+    // ...signin.item.data?.blocks[0].Texts,
+  ]
 
-  const allBlocks: Array<any> = [...signinButtons, ...signinLinks, ...signinFields, ...signinTexts]
+  console.log(allBlocks)
 
   allBlocks.sort((a, b) => {
     return a.sortOrder - b.sortOrder
@@ -163,7 +165,7 @@ export default function AuthForm() {
             handleLogin(email, password)
           }}
         >
-          <div className={s.title}>{signin.item.data?.blocks[0].BlockTitle}</div>
+          {/* <div className={s.title}>{signin.item.data?.blocks[0].BlockTitle}</div> */}
           {/* {allBlocks.map(block => renderAuthForm(block))} */}
         </form>
       </ShadowBox>
