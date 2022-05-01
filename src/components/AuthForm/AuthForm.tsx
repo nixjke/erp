@@ -1,22 +1,22 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useAppSelector } from '../../store/redux-hooks'
+import { useNavigate } from 'react-router-dom'
 import { fetchContainer } from '../../store/slices/signinSlice'
+import { setUser } from '../../store/slices/userSlice'
+import s from './AuthForm.module.scss'
 import Body1 from '../Body1/Body1'
 import Button from '../Button/Button'
 import Input from '../Input/Input'
 import DecorativeLink from '../DecorativeLink/DecorativeLink'
 import ShadowBox from '../ShadowBox/ShadowBox'
-import s from './AuthForm.module.scss'
 import Checkbox from '../Checkbox/Checkbox'
-import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { setUser } from '../../store/slices/userSlice'
 
 export default function AuthForm() {
   const dispath = useDispatch()
   const navigate = useNavigate()
-  const signin = useAppSelector(store => store.signin.item)
+  const signin = useAppSelector(store => store.signin)
 
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
@@ -27,12 +27,13 @@ export default function AuthForm() {
     dispath(fetchContainer())
   }, [])
 
-  const signinButtons = signin.data.Buttons
-  const signinLinks = signin.data.Links
-  const signinFields = signin.data.blocks[0].Fields
-  const signinTexts = signin.data.blocks[0].Texts
+  const signinButtons = signin.item.data?.Buttons
+  const signinLinks = signin.item.data?.Links
+  const signinFields = signin.item.data?.blocks[0].Fields
+  const signinTexts = signin.item.data?.blocks[0].Texts
 
-  const allBlocks = [...signinButtons, ...signinLinks, ...signinFields, ...signinTexts]
+  const allBlocks: Array<any> = [...signinButtons, ...signinLinks, ...signinFields, ...signinTexts]
+
   allBlocks.sort((a, b) => {
     return a.sortOrder - b.sortOrder
   })
@@ -84,7 +85,7 @@ export default function AuthForm() {
           email: email,
           password: password,
         },
-      });
+      })
       console.log(response)
       dispath(
         setUser({
@@ -162,8 +163,8 @@ export default function AuthForm() {
             handleLogin(email, password)
           }}
         >
-          <div className={s.title}>{signin.data.blocks[0].BlockTitle}</div>
-          {allBlocks.map(block => renderAuthForm(block))}
+          <div className={s.title}>{signin.item.data?.blocks[0].BlockTitle}</div>
+          {/* {allBlocks.map(block => renderAuthForm(block))} */}
         </form>
       </ShadowBox>
     </div>
