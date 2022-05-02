@@ -17,7 +17,7 @@ export default function AuthForm() {
   const dispath = useDispatch()
   const navigate = useNavigate()
   const signin = useAppSelector(store => store.signin)
-  
+
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [emailDirty, setEmailDirty] = React.useState(false)
@@ -26,11 +26,6 @@ export default function AuthForm() {
   React.useEffect(() => {
     dispath(fetchContainer())
   }, [])
-
-
-  // allBlocks.sort((a, b) => {
-  //   return a.sortOrder - b.sortOrder
-  // })
 
   const blurHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     switch (e.target.name) {
@@ -148,6 +143,13 @@ export default function AuthForm() {
     }
   }
 
+  if (!signin.isLoading)
+    return (
+      <div className={s.authForm}>
+        <h1>Loading...</h1>
+      </div>
+    )
+
   return (
     <div className={s.authForm}>
       <ShadowBox>
@@ -157,7 +159,7 @@ export default function AuthForm() {
             handleLogin(email, password)
           }}
         >
-          {/* <div className={s.title}>{signin.item.data?.blocks[0].BlockTitle}</div> */}
+          <div className={s.title}>{signin.item.data?.blocks[0].BlockTitle}</div>
           {/* {allBlocks.map(block => renderAuthForm(block))} */}
         </form>
       </ShadowBox>
