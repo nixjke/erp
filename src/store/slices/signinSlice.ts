@@ -17,8 +17,21 @@ export const fetchContainer = createAsyncThunk('signin/fetchContainer', async ()
       method: 'GET',
       url: 'http://localhost:3001/auth',
     })
-    console.log(response.data)
-    console.log({ response: response.data })
+    const formData = [
+      ...response.data.data.blocks[0].Buttons,
+      ...response.data.data.blocks[0].Fields,
+      ...response.data.data.blocks[0].Texts,
+      ...response.data.data.blocks[0].Links,
+    ]
+    console.log(formData.sort((a, b) => a.sortOrder - b.sortOrder))
+    console.log({
+      user: response.data.user,
+      module: response.data.module,
+      properties: response.data.properties,
+      settings: response.data.settings,
+      panels: response.data.panels,
+      data: response.data,
+    })
     return {
       response: response.data,
     }

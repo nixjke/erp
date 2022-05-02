@@ -129,7 +129,7 @@
               "isRequired": true,
               "defaultValue": true,
               "canEdit": true,
-              "sortOrder": 3,
+              "sortOrder": 4,
               "value": "",
               "rel": null
             }
@@ -140,7 +140,7 @@
               "type": "Text",
               "title": "Еще нет аккаунта?",
               "hint": "",
-              "sortOrder": 3
+              "sortOrder": 6
             }
           ],
           "Links": [
@@ -151,7 +151,8 @@
               "Type": "Get",
               "routeUrn": "/api/v2/auth/recovery-email",
               "URL": "",
-              "routeAction": "OpenModal"
+              "routeAction": "OpenModal",
+              "sortOrder": 3
             },
             {
               "id": 3,
@@ -160,7 +161,8 @@
               "Type": "Get",
               "routeUrn": "/api/v2/auth/RegisterFree",
               "URL": "https://mysmartoffice.pro/RegisterFree",
-              "routeAction": ""
+              "routeAction": "",
+              "sortOrder": 7
             }
           ],
           "Buttons": [
@@ -171,7 +173,8 @@
               "type": "Post",
               "routeUrn": "/api/v2/auth/login",
               "URL": "",
-              "routeAction": ""
+              "routeAction": "",
+              "sortOrder": 5
             }
           ]
         },
