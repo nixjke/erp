@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useAppSelector } from '../../store/redux-hooks'
@@ -25,6 +26,7 @@ export default function AuthForm() {
 
   React.useEffect(() => {
     dispath(fetchContainer())
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const blurHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -90,6 +92,7 @@ export default function AuthForm() {
   }
 
   const renderAuthForm = (params: any) => {
+    console.log(params)
     switch (params.type) {
       case 'Email':
         return (
@@ -142,7 +145,7 @@ export default function AuthForm() {
         return
     }
   }
-  
+
   if (!signin.isLoading)
     return (
       <div className={s.authForm}>
@@ -159,8 +162,8 @@ export default function AuthForm() {
             handleLogin(email, password)
           }}
         >
-          <div className={s.title}>{signin.item.data?.blocks[0].BlockTitle}</div>
-          {/* {allBlocks.map(block => renderAuthForm(block))} */}
+          <div className={s.title}>{signin.item.data.blocks[0].BlockTitle}</div>
+          {signin.item.formData.map((block: any) => renderAuthForm(block))}
         </form>
       </ShadowBox>
     </div>

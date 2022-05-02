@@ -48,7 +48,7 @@
           {
             "id": 1,
             "icon": "",
-            "Title": "mysmartoffice.pro",
+            "title": "mysmartoffice.pro",
             "URL": "https://mysmartoffice.pro",
             "Texts": [
               {
@@ -147,8 +147,8 @@
             {
               "id": 1,
               "icon": "",
-              "Title": "Забыли пароль",
-              "Type": "Get",
+              "title": "Забыли пароль",
+              "type": "Get",
               "routeUrn": "/api/v2/auth/recovery-email",
               "URL": "",
               "routeAction": "OpenModal",
@@ -157,8 +157,8 @@
             {
               "id": 3,
               "icon": "",
-              "Title": "Зарегистрируйтесь бесплатно",
-              "Type": "Get",
+              "title": "Зарегистрируйтесь бесплатно",
+              "type": "Get",
               "routeUrn": "/api/v2/auth/RegisterFree",
               "URL": "https://mysmartoffice.pro/RegisterFree",
               "routeAction": "",
@@ -195,7 +195,7 @@
               "id": 4,
               "icon": "",
               "Title": "Разработчик",
-              "Type": "",
+              "type": "",
               "routeUrn": "",
               "URL": "https://mysmartoffice.pro",
               "routeAction": ""
