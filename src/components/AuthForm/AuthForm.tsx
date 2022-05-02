@@ -17,7 +17,7 @@ export default function AuthForm() {
   const dispath = useDispatch()
   const navigate = useNavigate()
   const signin = useAppSelector(store => store.signin)
-  console.log(signin)
+  
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [emailDirty, setEmailDirty] = React.useState(false)
@@ -27,18 +27,10 @@ export default function AuthForm() {
     dispath(fetchContainer())
   }, [])
 
-  const allBlocks: Array<any> = [
-    // ...signin.item.data?.Buttons,
-    // ...signin.item.data?.Links,
-    // ...signin.item.data?.blocks[0].Fields,
-    // ...signin.item.data?.blocks[0].Texts,
-  ]
 
-  console.log(allBlocks)
-
-  allBlocks.sort((a, b) => {
-    return a.sortOrder - b.sortOrder
-  })
+  // allBlocks.sort((a, b) => {
+  //   return a.sortOrder - b.sortOrder
+  // })
 
   const blurHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     switch (e.target.name) {

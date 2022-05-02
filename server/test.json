@@ -35,7 +35,7 @@
           "type": "Text",
           "title": "CRM Company Name",
           "hint": "",
-          "sortOrder": 1
+          "sortOrder": 2
         }
       ]
     },
@@ -59,151 +59,151 @@
             }
           ]
         }
-      ],
-      "data": {
-        "blocks": [
+      ]
+    }
+  ],
+  "data": {
+    "blocks": [
+      {
+        "id": 1,
+        "BlockTitle": "Войти в аккаунт",
+        "Fields": [
           {
             "id": 1,
-            "BlockTitle": "Войти в аккаунт",
-            "Fields": [
+            "type": "Email",
+            "title": "Email",
+            "hint": "Введите Email",
+            "isRequired": true,
+            "defaultValue": "",
+            "canEdit": true,
+            "sortOrder": 1,
+            "value": "",
+            "rel": null,
+            "patterns": [
               {
                 "id": 1,
-                "type": "Email",
-                "title": "Email",
-                "hint": "Введите Email",
-                "isRequired": true,
-                "defaultValue": "",
-                "canEdit": true,
-                "sortOrder": 1,
-                "value": "",
-                "rel": null,
-                "patterns": [
-                  {
-                    "id": 1,
-                    "message_id": 1,
-                    "pattern": "pattern",
-                    "type": "error"
-                  },
-                  {
-                    "id": 2,
-                    "message_id": 1,
-                    "pattern": "pattern",
-                    "type": "error"
-                  }
-                ]
+                "message_id": 1,
+                "pattern": "pattern",
+                "type": "error"
               },
               {
                 "id": 2,
-                "type": "password",
-                "title": "Пароль",
-                "hint": "Введите Пароль",
-                "isRequired": true,
-                "defaultValue": "",
-                "canEdit": true,
-                "sortOrder": 2,
-                "value": "",
-                "rel": null,
-                "patterns": [
-                  {
-                    "id": 1,
-                    "message_id": 1,
-                    "pattern": "pattern",
-                    "type": "error"
-                  },
-                  {
-                    "id": 2,
-                    "message_id": 1,
-                    "pattern": "pattern",
-                    "type": "error"
-                  }
-                ]
-              },
-              {
-                "id": 3,
-                "type": "checkbox",
-                "title": "Запомнить меня",
-                "hint": "",
-                "isRequired": true,
-                "defaultValue": true,
-                "canEdit": true,
-                "sortOrder": 3,
-                "value": "",
-                "rel": null
-              }
-            ],
-            "Texts": [
-              {
-                "id": 1,
-                "type": "Text",
-                "title": "Еще нет аккаунта?",
-                "hint": "",
-                "sortOrder": 3
-              }
-            ],
-            "Links": [
-              {
-                "id": 1,
-                "icon": "",
-                "Title": "Забыли пароль",
-                "Type": "Get",
-                "routeUrn": "/api/v2/auth/recovery-email",
-                "URL": "",
-                "routeAction": "OpenModal"
-              },
-              {
-                "id": 3,
-                "icon": "",
-                "Title": "Зарегистрируйтесь бесплатно",
-                "Type": "Get",
-                "routeUrn": "/api/v2/auth/RegisterFree",
-                "URL": "https://mysmartoffice.pro/RegisterFree",
-                "routeAction": ""
-              }
-            ],
-            "Buttons": [
-              {
-                "id": 2,
-                "icon": "",
-                "title": "Войти",
-                "type": "Post",
-                "routeUrn": "/api/v2/auth/login",
-                "URL": "",
-                "routeAction": ""
+                "message_id": 1,
+                "pattern": "pattern",
+                "type": "error"
               }
             ]
           },
           {
             "id": 2,
-            "BlockTitle": "Footer",
-            "Texts": [
+            "type": "password",
+            "title": "Пароль",
+            "hint": "Введите Пароль",
+            "isRequired": true,
+            "defaultValue": "",
+            "canEdit": true,
+            "sortOrder": 2,
+            "value": "",
+            "rel": null,
+            "patterns": [
               {
                 "id": 1,
-                "type": "Text",
-                "title": "Все права защищены",
-                "hint": "",
-                "sortOrder": 1
-              }
-            ],
-            "Links": [
+                "message_id": 1,
+                "pattern": "pattern",
+                "type": "error"
+              },
               {
-                "id": 4,
-                "icon": "",
-                "Title": "Разработчик",
-                "Type": "",
-                "routeUrn": "",
-                "URL": "https://mysmartoffice.pro",
-                "routeAction": ""
+                "id": 2,
+                "message_id": 1,
+                "pattern": "pattern",
+                "type": "error"
               }
             ]
+          },
+          {
+            "id": 3,
+            "type": "checkbox",
+            "title": "Запомнить меня",
+            "hint": "",
+            "isRequired": true,
+            "defaultValue": true,
+            "canEdit": true,
+            "sortOrder": 3,
+            "value": "",
+            "rel": null
           }
         ],
-        "Messages": [
+        "Texts": [
           {
             "id": 1,
-            "text": "Неверный логин или пароль"
+            "type": "Text",
+            "title": "Еще нет аккаунта?",
+            "hint": "",
+            "sortOrder": 3
+          }
+        ],
+        "Links": [
+          {
+            "id": 1,
+            "icon": "",
+            "Title": "Забыли пароль",
+            "Type": "Get",
+            "routeUrn": "/api/v2/auth/recovery-email",
+            "URL": "",
+            "routeAction": "OpenModal"
+          },
+          {
+            "id": 3,
+            "icon": "",
+            "Title": "Зарегистрируйтесь бесплатно",
+            "Type": "Get",
+            "routeUrn": "/api/v2/auth/RegisterFree",
+            "URL": "https://mysmartoffice.pro/RegisterFree",
+            "routeAction": ""
+          }
+        ],
+        "Buttons": [
+          {
+            "id": 2,
+            "icon": "",
+            "title": "Войти",
+            "type": "Post",
+            "routeUrn": "/api/v2/auth/login",
+            "URL": "",
+            "routeAction": ""
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "BlockTitle": "Footer",
+        "Texts": [
+          {
+            "id": 1,
+            "type": "Text",
+            "title": "Все права защищены",
+            "hint": "",
+            "sortOrder": 1
+          }
+        ],
+        "Links": [
+          {
+            "id": 4,
+            "icon": "",
+            "Title": "Разработчик",
+            "Type": "",
+            "routeUrn": "",
+            "URL": "https://mysmartoffice.pro",
+            "routeAction": ""
           }
         ]
       }
-    }
-  ]
+    ],
+    "Messages": [
+      {
+        "id": 1,
+        "text": "Неверный логин или пароль"
+      }
+    ]
+  }
 }

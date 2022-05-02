@@ -17,7 +17,11 @@ export const fetchContainer = createAsyncThunk('signin/fetchContainer', async ()
       method: 'GET',
       url: 'http://localhost:3001/auth',
     })
-    return response.data
+    console.log(response.data)
+    console.log({ response: response.data })
+    return {
+      response: response.data,
+    }
   } catch (e) {
     console.log(e)
     return {}
