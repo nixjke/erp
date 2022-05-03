@@ -7,7 +7,7 @@ export default function CrmCompanyAuth() {
   return (
     <div>
       <Header />
-
+      
       <Outlet />
 
       <Footer />

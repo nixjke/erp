@@ -67,7 +67,6 @@ export default function AuthForm() {
   }
 
   const handleLogin = async (email: string, password: string) => {
-    console.log('asd')
     try {
       const response = await axios({
         method: 'POST',
@@ -92,7 +91,6 @@ export default function AuthForm() {
   }
 
   const renderAuthForm = (params: any) => {
-    console.log(params)
     switch (params.type) {
       case 'Email':
         return (
