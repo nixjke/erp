@@ -26,7 +26,7 @@ export default function AuthForm() {
 
   React.useEffect(() => {
     dispath(fetchContainer())
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const blurHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -105,6 +105,7 @@ export default function AuthForm() {
               emailHandler(e)
             }}
             onBlur={(e: React.ChangeEvent<HTMLInputElement>) => blurHandler(e)}
+            style={params.styles}
           />
         )
       case 'password':
@@ -120,19 +121,29 @@ export default function AuthForm() {
               passwordHandler(e)
             }}
             onBlur={(e: React.ChangeEvent<HTMLInputElement>) => blurHandler(e)}
+            style={params.styles}
           />
         )
       case 'checkbox':
         return (
-          <label key={params.id + params.type} className={s.label}>
+          <label style={params.styles} key={params.id + params.type} className={s.label}>
             <Checkbox />
             <Body1>{params.title}</Body1>
           </label>
         )
       case 'Get':
-        return <DecorativeLink key={params.id + params.type}>{params.title}</DecorativeLink>
+        return (
+          <DecorativeLink style={params.styles} key={params.id + params.type}>
+            {params.title}
+          </DecorativeLink>
+        )
       case 'Post':
-        return <Button key={params.id + params.type}>{params.title}</Button>
+        console.log(params.styles)
+        return (
+          <Button style={params.styles} key={params.id + params.type}>
+            {params.title}
+          </Button>
+        )
       case 'Text':
         return (
           <div key={params.id + params.type} className={s.text}>

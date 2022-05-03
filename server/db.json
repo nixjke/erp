@@ -93,7 +93,10 @@
                   "pattern": "pattern",
                   "type": "error"
                 }
-              ]
+              ],
+              "styles": {
+                "margin": "0 0 16px 0"
+              }
             },
             {
               "id": 2,
@@ -119,7 +122,10 @@
                   "pattern": "pattern",
                   "type": "error"
                 }
-              ]
+              ],
+              "styles": {
+                "margin": "0 0 8px 0"
+              }
             },
             {
               "id": 3,
@@ -131,7 +137,10 @@
               "canEdit": true,
               "sortOrder": 4,
               "value": "",
-              "rel": null
+              "rel": null,
+              "styles": {
+                "margin": "0 0 24px 0"
+              }
             }
           ],
           "Texts": [
@@ -152,7 +161,10 @@
               "routeUrn": "/api/v2/auth/recovery-email",
               "URL": "",
               "routeAction": "OpenModal",
-              "sortOrder": 3
+              "sortOrder": 3,
+              "styles": {
+                "margin": "0 0 12px 0"
+              }
             },
             {
               "id": 3,
@@ -162,6 +174,9 @@
               "routeUrn": "/api/v2/auth/RegisterFree",
               "URL": "https://mysmartoffice.pro/RegisterFree",
               "routeAction": "",
+              "styles": {
+                "textAlign": "center"
+              },
               "sortOrder": 7
             }
           ],
@@ -174,7 +189,10 @@
               "routeUrn": "/api/v2/auth/login",
               "URL": "",
               "routeAction": "",
-              "sortOrder": 5
+              "sortOrder": 5,
+              "styles": {
+                "margin": "0 0 48px 0"
+              }
             }
           ]
         },
