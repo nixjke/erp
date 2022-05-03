@@ -9,11 +9,6 @@
   justify-content: space-between;
   gap: 10px;
 
-  & a {
-    text-decoration: underline;
-    margin-right: 110px;
-  }
-
   & div {
     margin-left: 65px;
 
@@ -27,4 +22,9 @@
       text-decoration: underline;
     }
   }
+}
+.link {
+  text-decoration: underline;
+  margin-right: 110px;
+  cursor: pointer;
 }
