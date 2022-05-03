@@ -19,6 +19,8 @@ export default function AuthForm() {
   const navigate = useNavigate()
   const signin = useAppSelector(store => store.signin)
 
+  console.log(signin.isHeader)
+
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [emailDirty, setEmailDirty] = React.useState(false)
@@ -76,7 +78,6 @@ export default function AuthForm() {
           password: password,
         },
       })
-      console.log(response)
       dispath(
         setUser({
           email: response.data.user.email,
@@ -138,7 +139,6 @@ export default function AuthForm() {
           </DecorativeLink>
         )
       case 'Post':
-        console.log(params.styles)
         return (
           <Button style={params.styles} key={params.id + params.type}>
             {params.title}
@@ -158,7 +158,11 @@ export default function AuthForm() {
   if (!signin.isLoading)
     return (
       <div className={s.authForm}>
-        <h1>Loading...</h1>
+        <ShadowBox>
+          <form>
+            <h1>Loading...</h1>
+          </form>
+        </ShadowBox>
       </div>
     )
 
@@ -178,3 +182,9 @@ export default function AuthForm() {
     </div>
   )
 }
+
+// Войти кнопа url
+// Стли ui kit
+// Фон
+// Пользователя нет
+//Альтернативные сценарии (исключения)

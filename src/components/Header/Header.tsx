@@ -6,7 +6,7 @@ import { useAppSelector } from '../../store/redux-hooks'
 export default function Header() {
   const signin = useAppSelector(store => store.signin)
 
-  if(!signin.isLoading) return <header><h1>Loading...</h1></header>
+  if (!signin.isHeader) return <></>
 
   return (
     <header className={styles.header}>

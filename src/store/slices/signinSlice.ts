@@ -4,11 +4,15 @@ import axios from 'axios'
 interface InitialState {
   item: any
   isLoading: boolean
+  isHeader: boolean
+  isFooter: boolean
 }
 
 const initialState: InitialState = {
   item: {},
   isLoading: false,
+  isHeader: false,
+  isFooter: false,
 }
 
 export const fetchContainer = createAsyncThunk('signin/fetchContainer', async () => {
@@ -25,7 +29,7 @@ export const fetchContainer = createAsyncThunk('signin/fetchContainer', async ()
   ]
 
   const header = response.data.panels[0]
-  const footer = { footer: response.data.panels[1], footerTwo: response.data.data.blocks[1] }
+  const footer = response.data.panels[1]
 
   formData.sort((a, b) => a.sortOrder - b.sortOrder)
 
@@ -38,7 +42,9 @@ export const fetchContainer = createAsyncThunk('signin/fetchContainer', async ()
     data: response.data.data,
     formData: formData,
     header: header,
+    isHeader: header ? header.type === 'Header' : false,
     footer: footer,
+    isFooter: footer ? footer.type === 'Footer' : false,
   }
 })
 
@@ -50,6 +56,8 @@ const signinSlice = createSlice({
     builder.addCase(fetchContainer.fulfilled, (state, action) => {
       state.item = action.payload
       state.isLoading = true
+      state.isHeader = action.payload.isHeader
+      state.isFooter = action.payload.isFooter
     })
   },
 })
