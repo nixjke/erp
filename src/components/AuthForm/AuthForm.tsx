@@ -12,7 +12,7 @@ import Input from '../Input/Input'
 import DecorativeLink from '../DecorativeLink/DecorativeLink'
 import ShadowBox from '../ShadowBox/ShadowBox'
 import Checkbox from '../Checkbox/Checkbox'
-import axios from 'axios'
+import axios, { Method } from 'axios'
 
 export default function AuthForm() {
   const dispath = useDispatch()
@@ -68,11 +68,12 @@ export default function AuthForm() {
     }
   }
 
-  const handleLogin = async (email: string, password: string) => {
+  const handleLogin = async (email: string, password: string, url: string, method: Method = 'GET') => {
+    console.log(method)
     try {
       const response = await axios({
-        method: 'POST',
-        url: 'http://localhost:3001/signin',
+        method: method,
+        url: `http://localhost:3001${url}`,
         data: {
           email: email,
           password: password,
@@ -138,9 +139,15 @@ export default function AuthForm() {
             {params.title}
           </DecorativeLink>
         )
-      case 'Post':
+      case 'post':
         return (
-          <Button style={params.styles} key={params.id + params.type}>
+          <Button
+            onClick={() => {
+              handleLogin(email, password, params.routeUrn, params.type)
+            }}
+            style={params.styles}
+            key={params.id + params.type}
+          >
             {params.title}
           </Button>
         )
@@ -169,12 +176,7 @@ export default function AuthForm() {
   return (
     <div className={s.authForm}>
       <ShadowBox>
-        <form
-          onSubmit={e => {
-            e.preventDefault()
-            handleLogin(email, password)
-          }}
-        >
+        <form onSubmit={e => e.preventDefault()}>
           <div className={s.title}>{signin.item.data.blocks[0].BlockTitle}</div>
           {signin.item.formData.map((block: any) => renderAuthForm(block))}
         </form>
@@ -183,7 +185,6 @@ export default function AuthForm() {
   )
 }
 
-// Войти кнопа url
 // Стли ui kit
 // Фон
 // Пользователя нет

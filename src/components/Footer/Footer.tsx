@@ -4,14 +4,14 @@ import styles from './Footer.module.scss'
 
 export default function Footer() {
   const signin = useAppSelector(store => store.signin)
-
+  
   if (!signin.isFooter) return <></>
 
   return (
     <footer className={styles.footer}>
       <div>
         <span>© 2022,</span>
-        {/* <span>{signin.item.footer.footer.Links[0].title}</span> */}
+        <span>{signin.item.footer.Links[0].title}</span>
       </div>
       <span className={styles.link} onClick={e => e.preventDefault()}>
         Политика конфиденциальности
