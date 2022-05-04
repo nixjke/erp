@@ -135,12 +135,10 @@
               "isRequired": true,
               "defaultValue": true,
               "canEdit": true,
-              "sortOrder": 4,
+              "sortOrder": 5,
               "value": "",
               "rel": null,
-              "styles": {
-                "margin": "0 0 24px 0"
-              }
+              "styles": {}
             },
             {
               "id": 3,
@@ -150,9 +148,13 @@
               "isRequired": false,
               "defaultValue": false,
               "canEdit": false,
-              "sortOrder": 4,
+              "sortOrder": 5,
               "value": "",
-              "rel": null
+              "rel": null,
+              "styles": {
+                "border": "1px solid #D6E3FF",
+                "margin": "16px 0px"
+              }
             }
           ],
           "Texts": [
@@ -201,9 +203,9 @@
               "routeUrn": "/signin",
               "URL": "",
               "routeAction": "",
-              "sortOrder": 5,
+              "sortOrder": 4,
               "styles": {
-                "margin": "0 0 48px 0"
+                "margin": "0 0 16px 0"
               }
             }
           ]

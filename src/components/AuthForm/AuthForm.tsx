@@ -153,10 +153,12 @@ export default function AuthForm() {
         )
       case 'Text':
         return (
-          <div key={params.id + params.type} className={s.text}>
-            <Body1>{params.title}</Body1>
-          </div>
+          <Body1 key={params.id + params.type} className={s.text}>
+            {params.title}
+          </Body1>
         )
+      case 'hr':
+        return <hr style={params.styles} />
       default:
         return
     }
