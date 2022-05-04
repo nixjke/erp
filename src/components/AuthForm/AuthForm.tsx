@@ -19,8 +19,6 @@ export default function AuthForm() {
   const navigate = useNavigate()
   const signin = useAppSelector(store => store.signin)
 
-  console.log(signin.isHeader)
-
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [emailDirty, setEmailDirty] = React.useState(false)
@@ -47,10 +45,10 @@ export default function AuthForm() {
   const emailHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)
 
-    const re =
+    const reg =
       /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
-    if (!String(e.target.value).toLowerCase().match(re)) {
+    if (!String(e.target.value).toLowerCase().match(reg)) {
       setEmailDirty(true)
     } else {
       setEmailDirty(false)
@@ -158,7 +156,7 @@ export default function AuthForm() {
           </Body1>
         )
       case 'hr':
-        return <hr style={params.styles} />
+        return <hr key={params.type} style={params.styles} />
       default:
         return
     }
@@ -189,3 +187,4 @@ export default function AuthForm() {
 
 // Пользователя нет
 //Альтернативные сценарии (исключения)
+// Добааить текст ошибки в инпут

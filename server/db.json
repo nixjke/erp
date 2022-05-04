@@ -17,8 +17,8 @@
         "bgcolor": "#FFF"
       }
     },
-    "panels": [
-      {
+    "panels": {
+      "header": {
         "type": "Header",
         "id": 1,
         "Image": [
@@ -40,7 +40,7 @@
           }
         ]
       },
-      {
+      "footer": {
         "type": "Footer",
         "id": 2,
         "BlockTitle": "Footer",
@@ -62,7 +62,7 @@
           }
         ]
       }
-    ],
+    },
     "data": {
       "blocks": [
         {
@@ -238,7 +238,11 @@
       "Messages": [
         {
           "id": 1,
-          "text": "Неверный логин или пароль"
+          "text": "Неверный логин"
+        },
+        {
+          "id": 2,
+          "text": "Неверный пароль"
         }
       ]
     }

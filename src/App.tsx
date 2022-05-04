@@ -1,6 +1,5 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import './App.css'
 import AuthForm from './components/AuthForm/AuthForm'
 import NotFound from './components/NotFound/NotFound'
 import CrmCompanyAuth from './pages/CrmCompanyAuth/CrmCompanyAuth'
