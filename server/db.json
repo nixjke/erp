@@ -13,7 +13,7 @@
       "lang": "ru",
       "baseUrl": "site.ru",
       "Body": {
-        "background": "/upload/background848f818896d42178d0e9fbcd4dfff40e.jpg",
+        "background": "https://sun9-61.userapi.com/s/v1/if2/ci9fT513HSYjUGJcq2B4DtMPt1h26bnKXQyhT_bFhAxqZal0jvzUK5mZSZDqkJ5TrXHi-pCorhZnkjiUNnctorMq.jpg?size=1920x1080&quality=96&type=album",
         "bgcolor": "#FFF"
       }
     },
@@ -141,6 +141,18 @@
               "styles": {
                 "margin": "0 0 24px 0"
               }
+            },
+            {
+              "id": 3,
+              "type": "hr",
+              "title": "",
+              "hint": "",
+              "isRequired": false,
+              "defaultValue": false,
+              "canEdit": false,
+              "sortOrder": 4,
+              "value": "",
+              "rel": null
             }
           ],
           "Texts": [
@@ -156,7 +168,7 @@
             {
               "id": 1,
               "icon": "",
-              "title": "Забыли пароль?",
+              "title": "Напомнить пароль",
               "type": "Get",
               "routeUrn": "/api/v2/auth/recovery-email",
               "URL": "",
@@ -175,7 +187,7 @@
               "URL": "https://mysmartoffice.pro/RegisterFree",
               "routeAction": "",
               "styles": {
-                "textAlign": "center"
+                "textAlign": "start"
               },
               "sortOrder": 7
             }

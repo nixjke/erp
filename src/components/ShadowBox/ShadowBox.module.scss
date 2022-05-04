@@ -1,9 +1,10 @@
 .shadowBox form {
   width: 100%;
   background-color: #fff;
-  box-shadow: 0px 4px 20px rgba(129, 129, 129, 0.25);
-  padding: clamp(28px, 4vw, 56px) clamp(32px, 4vw, 64px);
-
+  border: 1px solid #b1c3e6;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: clamp(28px, 4vw, 38px) clamp(38px, 4vw, 48px);
 
   display: flex;
   flex-direction: column;

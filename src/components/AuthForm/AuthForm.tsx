@@ -107,7 +107,7 @@ export default function AuthForm() {
               emailHandler(e)
             }}
             onBlur={(e: React.ChangeEvent<HTMLInputElement>) => blurHandler(e)}
-            style={params.styles}
+            styles={params.styles}
           />
         )
       case 'password':
@@ -123,7 +123,7 @@ export default function AuthForm() {
               passwordHandler(e)
             }}
             onBlur={(e: React.ChangeEvent<HTMLInputElement>) => blurHandler(e)}
-            style={params.styles}
+            styles={params.styles}
           />
         )
       case 'checkbox':
@@ -186,6 +186,5 @@ export default function AuthForm() {
 }
 
 // Стли ui kit
-// Фон
 // Пользователя нет
 //Альтернативные сценарии (исключения)
