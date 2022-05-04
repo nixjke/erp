@@ -93,6 +93,7 @@ export default function AuthForm() {
   const renderAuthForm = (params: any) => {
     switch (params.type) {
       case 'Email':
+        console.log(params)
         return (
           <Input
             name={params.type}

@@ -28,11 +28,6 @@ export const fetchContainer = createAsyncThunk('signin/fetchContainer', async ()
     ...response.data.data.blocks[0].Links,
   ]
 
-  const header = response.data.panels.header
-  const footer = response.data.panels.footer
-
-  console.log(header)
-
   formData.sort((a, b) => a.sortOrder - b.sortOrder)
 
   return {
@@ -43,10 +38,10 @@ export const fetchContainer = createAsyncThunk('signin/fetchContainer', async ()
     panels: response.data.panels,
     data: response.data.data,
     formData: formData,
-    header: header,
-    isHeader: header ? header.type === 'Header' : false,
-    footer: footer,
-    isFooter: footer ? footer.type === 'Footer' : false,
+    header: response.data.panels.header,
+    isHeader: response.data.panels.header ? response.data.panels.header.type === 'Header' : false,
+    footer: response.data.panels.footer,
+    isFooter: response.data.panels.footer ? response.data.panels.footer.type === 'Footer' : false,
   }
 })
 
