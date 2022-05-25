@@ -17,7 +17,7 @@ interface Signin {
 export const signinApi = createApi({
   reducerPath: 'signinApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:8000',
+    baseUrl: 'http://89.108.106.147:8000',
   }),
   endpoints: build => ({
     getSignin: build.query<Signin, void>({
