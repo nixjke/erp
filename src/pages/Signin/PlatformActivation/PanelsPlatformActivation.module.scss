@@ -1,0 +1,27 @@
+.panels {
+  width: 400px;
+  height: 100%;
+  background-color: darkgray;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+  flex-direction: column;
+
+  & ul {
+    margin-top: 20px;
+  }
+
+  & ul li {
+    margin-top: 20px;
+    font-family: 'Montserrat';
+  }
+}

@@ -1,0 +1,30 @@
+.link {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  color: #4574F6;
+  cursor: pointer;
+  
+  &:hover {
+    border-bottom: 1px solid #4574F6;
+  }
+}
+
+.large {
+  font-size: 20px;
+}
+
+.normal {
+  font-size: 20px;
+}
+
+.normal {
+  font-size: 16px;
+}
+
+.small {
+  font-size: 14px;
+}
+
+.extraSmall {
+  font-size: 14px;
+}

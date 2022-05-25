@@ -1,0 +1,78 @@
+image: node:16.15.0
+
+#variables:
+#  IMAGE_NAME: ${CI_REGISTRY}/${CI_PROJECT_PATH}
+#  CI_REGISTRY: gitlab.wconsults.ru:5001
+#  CONTAINER_IMAGE: ${CI_REGISTRY}/erp/frontend_erp:${VERSION}_${CI_BUILD_REF}
+
+cache:
+  paths:
+    - node_modules/
+
+stages:
+#  - build
+  - deploy
+
+
+#  build:
+#   stage: build
+#   script:
+#     - npm run installAndBuild
+
+#deploy-mptver:
+#  stage: deploy
+#  only:
+#    - dev
+#  script:
+#    - git clone http://gitlab.wconsults.ru/ERP/mysmartoffice_app_react.git
+#    - cd mysmartoffice_app_react
+#    - git checkout dev
+#    - npm install
+#    - npm run build
+
+   # - sed -i "s/saas/local/g" App/services/appurls.json
+   # - cat App/services/appurls.json
+#    - npm i
+#    - npm audit fix
+#    - npm run buildProduction
+#    - ls wwwroot/app/bundle/
+#    - rm -rf /home/frontend/web/frontend.dev.wconsults.ru/public_html/**/*
+#    - cp -rfp wwwroot/* /home/frontend/web/frontend.dev.wconsults.ru/public_html
+#    - chown -R frontend:frontend /home/frontend/web/frontend.dev.wconsults.ru/public_html *
+#    - cd /home/frontend/web/frontend.dev.wconsults.ru/public_html
+#    - ls
+#    - ls app/bundle/
+#  environment:
+#    name: mptver_frontend
+#    url: http://frontend.dev.wconsults.ru
+#  when: manual
+
+deploy-demoerp:
+  stage: deploy
+  only:
+    - dev
+  script:
+#    - git clone http://gitlab.wconsults.ru/ERP/mysmartoffice_app_react.git
+#    - cd mysmartoffice_app_react
+    - git checkout dev
+    - node -v
+    - npm install
+    - npm run build
+#    - sed -i "s/mptver2/api$PROJECT_NAME/g" App/services/appurls.json
+#    - sed -i "s/http/$HTTP/g" App/services/appurls.json
+#    - sed -i "s/8900/$SOCKETPORT/g" App/services/appurls.json
+#    - sed -i "s/saas/local/g" App/services/appurls.json
+#    - cat App/services/appurls.json
+#    - npm i
+#    - npm run buildProduction
+#    - ls wwwroot/app/bundle/
+#    - rm -rf /home/$PROJECT_NAME/web/$PROJECT_NAME.dev.wconsults.ru/public_html/**/*
+#    - cp -rfp wwwroot/* /home/$PROJECT_NAME/web/$PROJECT_NAME.dev.wconsults.ru/public_html
+#    - chown -R $PROJECT_NAME:$PROJECT_NAME /home/$PROJECT_NAME/web/$PROJECT_NAME.dev.wconsults.ru/public_html *
+#    - cd /home/$PROJECT_NAME/web/$PROJECT_NAME.dev.wconsults.ru/public_html
+#    - ls
+#    - ls app/bundle/
+#  environment:
+#    name: $PROJECT_NAME
+#    url: http://$PROJECT_NAME.dev.wconsults.ru*/
+

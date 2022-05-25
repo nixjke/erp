@@ -1,16 +1,20 @@
-import { Action, combineReducers, configureStore, ThunkAction } from '@reduxjs/toolkit'
-import signinSlice from './slices/signinSlice'
-import userSlice from './slices/userSlice'
+import { configureStore, ThunkAction, Action, combineReducers } from '@reduxjs/toolkit'
+import { signinApi } from './Signin/signinApi'
 
 const rootReducer = combineReducers({
-  signin: signinSlice,
-  authorization: userSlice,
+  [signinApi.reducerPath]: signinApi.reducer,
 })
 
 export const store = configureStore({
   reducer: rootReducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(signinApi.middleware)
 })
 
 export type AppDispatch = typeof store.dispatch
 export type RootState = ReturnType<typeof store.getState>
-export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action<string>>
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  RootState,
+  unknown,
+  Action<string>
+>

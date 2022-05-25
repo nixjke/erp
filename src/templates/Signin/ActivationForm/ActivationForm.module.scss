@@ -1,0 +1,54 @@
+.activation {
+  width: calc(min(471px, 100%));
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.phoneInput {
+  & input {
+    border: 1px solid #a1b5e8;
+    border-radius: 0 4px 4px 0;
+    border-left: none;
+    padding: 16px 20px;
+    outline: none;
+    width: 100%;
+
+    font-family: 'Montserrat';
+
+    &:hover {
+      background-color: #fafaff;
+    }
+
+    &:focus {
+      border: 1px solid #4574f6;
+      border-left: none;
+    }
+
+    &::placeholder {
+      color: #b4bad1;
+    }
+  }
+
+  & div {
+    margin-right: 0;
+    padding-left: 10px;
+    border: 1px solid #a1b5e8;
+    border-radius: 4px 0 0 4px;
+    border-right: none;
+
+    &:hover {
+      background-color: #fafaff;
+    }
+
+    &:focus {
+      border: 1px solid #4574f6;
+      border-right: none;
+    }
+
+    & select {
+      opacity: 1;
+      outline: none;
+      padding-left: 6px;
+    }
+  }
+}
